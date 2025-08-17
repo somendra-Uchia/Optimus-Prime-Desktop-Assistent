@@ -1,0 +1,177 @@
+{
+    "command_patterns": {
+        "i was": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "was created": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "created by": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "by the": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "the ancient": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "ancient cyber": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "cyber crimes": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "crimes known": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "known as": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "as the": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "the price": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "price but": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "but i": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "i am": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "am currently": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "currently forced": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "forced in": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "in the": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "the form": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "form of": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "of a": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "a desktop": {
+            "success_count": 2,
+            "fail_count": 0
+        },
+        "check weather": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "weather in": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "in kanpur": {
+            "success_count": 3,
+            "fail_count": 0
+        },
+        "kanpur city": {
+            "success_count": 3,
+            "fail_count": 0
+        }
+    },
+    "error_solutions": {},
+    "successful_commands": [
+        {
+            "command": "wake up this is your alarm",
+            "timestamp": "2025-02-18 10:06:54.595011"
+        },
+        {
+            "command": "kya add karun office mein",
+            "timestamp": "2025-02-18 10:07:15.745829"
+        },
+        {
+            "command": "do you have memory",
+            "timestamp": "2025-02-18 10:07:20.946139"
+        },
+        {
+            "command": "stand for justice and fever",
+            "timestamp": "2025-02-18 10:08:07.496325"
+        },
+        {
+            "command": "itna hi rahane jyada nahin",
+            "timestamp": "2025-02-18 10:08:16.953053"
+        },
+        {
+            "command": "i was created by the ancient cyber crimes known as the price but i am currently forced in the form of a desktop assistant",
+            "timestamp": "2025-02-18 10:19:03.973466"
+        },
+        {
+            "command": "i was created by the ancient cyber crimes known as the branch assistant",
+            "timestamp": "2025-02-18 10:37:30.457991"
+        },
+        {
+            "command": "sonu ka access ho raha hai",
+            "timestamp": "2025-02-18 10:48:16.314084"
+        },
+        {
+            "command": "check weather in kanpur city",
+            "timestamp": "2025-02-18 10:51:04.612629"
+        },
+        {
+            "command": "dikhti hai",
+            "timestamp": "2025-02-18 10:51:27.716933"
+        },
+        {
+            "command": "kyon",
+            "timestamp": "2025-02-18 10:51:31.701460"
+        },
+        {
+            "command": "check weather in kanpur city",
+            "timestamp": "2025-02-18 10:53:54.375991"
+        },
+        {
+            "command": "i couldn't connect to the weather service",
+            "timestamp": "2025-02-18 10:53:55.562931"
+        },
+        {
+            "command": "i was created by the ancient cybertronian race known as the price but i am currently forced in the form of a desktop assistance",
+            "timestamp": "2025-02-18 10:54:21.416115"
+        },
+        {
+            "command": "avdhesh mami phone",
+            "timestamp": "2025-02-18 10:54:51.712182"
+        },
+        {
+            "command": "check weather in kanpur city",
+            "timestamp": "2025-02-18 10:58:04.914274"
+        }
+    ],
+    "failed_commands": [],
+    "last_update": "2025-02-18 10:06:38.326439"
+}
