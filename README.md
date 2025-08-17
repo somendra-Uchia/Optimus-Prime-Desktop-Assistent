@@ -266,12 +266,187 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Optimized Learning - Better pattern recognition
 - [ ] Resource Management - Improved memory usage
 
-## ⭐ Star History
+## ⭐ Project Flow
+├── Alam_data.txt
+├── Alert.py
+├── Automation
+    ├── Automation_Brain.py
+    ├── Battery.py
+    ├── Play_Music_YT.py
+    ├── Web_Data.py
+    ├── Web_Open.py
+    ├── __pycache__
+    │   ├── Automation.cpython-312.pyc
+    │   ├── Automation_Brain.cpython-311.pyc
+    │   ├── Automation_Brain.cpython-312.pyc
+    │   ├── Automation_Brain.cpython-313.pyc
+    │   ├── Battery.cpython-311.pyc
+    │   ├── Battery.cpython-312.pyc
+    │   ├── Battery.cpython-313.pyc
+    │   ├── Play_Music_YT.cpython-311.pyc
+    │   ├── Play_Music_YT.cpython-312.pyc
+    │   ├── Play_Music_YT.cpython-313.pyc
+    │   ├── Web_Data.cpython-311.pyc
+    │   ├── Web_Data.cpython-312.pyc
+    │   ├── Web_Data.cpython-313.pyc
+    │   ├── Web_Open.cpython-311.pyc
+    │   ├── Web_Open.cpython-312.pyc
+    │   ├── Web_Open.cpython-313.pyc
+    │   ├── open_App.cpython-311.pyc
+    │   ├── open_App.cpython-312.pyc
+    │   ├── open_App.cpython-313.pyc
+    │   ├── scroll_system.cpython-311.pyc
+    │   ├── scroll_system.cpython-312.pyc
+    │   ├── scroll_system.cpython-313.pyc
+    │   ├── tab_automation.cpython-311.pyc
+    │   ├── tab_automation.cpython-312.pyc
+    │   ├── tab_automation.cpython-313.pyc
+    │   ├── youtube_playback.cpython-311.pyc
+    │   ├── youtube_playback.cpython-312.pyc
+    │   └── youtube_playback.cpython-313.pyc
+    ├── open_App.py
+    ├── scroll_system.py
+    ├── tab_automation.py
+    └── youtube_playback.py
+├── Data
+    ├── DLG_Data.py
+    ├── Notes
+    │   └── note_20250218_185828.txt
+    ├── Screenshots
+    │   └── screenshot_20250220_202303.png
+    ├── __pycache__
+    │   ├── DLG_Data.cpython-311.pyc
+    │   ├── DLG_Data.cpython-312.pyc
+    │   ├── DLG_Data.cpython-313.pyc
+    │   └── qa_data.cpython-312.pyc
+    ├── learned_features.json
+    └── learning_data.json
+├── Device_info
+    ├── __pycache__
+    │   ├── device_info.cpython-311.pyc
+    │   ├── device_info.cpython-312.pyc
+    │   └── device_info.cpython-313.pyc
+    └── device_info.py
+├── Features
+    ├── Transformers Prime Opening.mp3
+    ├── __pycache__
+    │   ├── check_internet_speed.cpython-311.pyc
+    │   ├── check_internet_speed.cpython-312.pyc
+    │   ├── check_internet_speed.cpython-313.pyc
+    │   ├── conversation.cpython-311.pyc
+    │   ├── conversation.cpython-312.pyc
+    │   ├── conversation.cpython-313.pyc
+    │   ├── create_file.cpython-311.pyc
+    │   ├── create_file.cpython-312.pyc
+    │   ├── create_file.cpython-313.pyc
+    │   ├── location.cpython-312.pyc
+    │   ├── mood_music.cpython-312.pyc
+    │   ├── play_theme.cpython-311.pyc
+    │   ├── play_theme.cpython-312.pyc
+    │   ├── play_theme.cpython-313.pyc
+    │   ├── quick_notes.cpython-311.pyc
+    │   ├── quick_notes.cpython-312.pyc
+    │   ├── quick_notes.cpython-313.pyc
+    │   ├── screen_control.cpython-311.pyc
+    │   ├── screen_control.cpython-312.pyc
+    │   ├── screen_control.cpython-313.pyc
+    │   ├── self_learning.cpython-311.pyc
+    │   ├── self_learning.cpython-312.pyc
+    │   ├── self_learning.cpython-313.pyc
+    │   ├── system_control.cpython-311.pyc
+    │   ├── system_control.cpython-312.pyc
+    │   ├── system_control.cpython-313.pyc
+    │   ├── task_manager.cpython-311.pyc
+    │   ├── task_manager.cpython-312.pyc
+    │   └── task_manager.cpython-313.pyc
+    ├── check_internet_speed.py
+    ├── conversation.py
+    ├── create_file.py
+    ├── play_theme.py
+    ├── quick_notes.py
+    ├── screen_control.py
+    ├── self_learning.py
+    ├── system_control.py
+    └── task_manager.py
+├── LICENSE
+├── Optimus.py
+├── Optimus_Prime_Documentation.md
+├── README.md
+├── SpeachToText
+    ├── SpeachToText.py
+    ├── __init__.py
+    └── __pycache__
+    │   ├── SpeachToText.cpython-311.pyc
+    │   ├── SpeachToText.cpython-312.pyc
+    │   ├── SpeachToText.cpython-313.pyc
+    │   ├── __init__.cpython-311.pyc
+    │   ├── __init__.cpython-312.pyc
+    │   └── __init__.cpython-313.pyc
+├── TextToSpeach
+    ├── Fast_DF_TTS.py
+    └── __pycache__
+    │   ├── Fast_DF_TTS.cpython-311.pyc
+    │   ├── Fast_DF_TTS.cpython-312.pyc
+    │   └── Fast_DF_TTS.cpython-313.pyc
+├── Time_Operations
+    ├── __pycache__
+    │   ├── brain.cpython-311.pyc
+    │   ├── brain.cpython-312.pyc
+    │   ├── brain.cpython-313.pyc
+    │   ├── throw_alert.cpython-311.pyc
+    │   ├── throw_alert.cpython-312.pyc
+    │   └── throw_alert.cpython-313.pyc
+    ├── brain.py
+    └── throw_alert.py
+├── UI
+    ├── __pycache__
+    │   ├── optimus_interface.cpython-312.pyc
+    │   ├── server.cpython-312.pyc
+    │   └── web_interface.cpython-312.pyc
+    ├── input.txt
+    ├── server.py
+    └── ui.htm
+├── Weather_Check
+    ├── __pycache__
+    │   ├── check_weather.cpython-311.pyc
+    │   ├── check_weather.cpython-312.pyc
+    │   └── check_weather.cpython-313.pyc
+    └── check_weather.py
+├── Whatsapp_automation
+    ├── Whatsapp.py
+    └── __pycache__
+    │   ├── Whatsapp.cpython-311.pyc
+    │   ├── Whatsapp.cpython-312.pyc
+    │   └── Whatsapp.cpython-313.pyc
+├── __pycache__
+    ├── Alert.cpython-311.pyc
+    ├── Alert.cpython-312.pyc
+    ├── Alert.cpython-313.pyc
+    ├── co_brain.cpython-311.pyc
+    ├── co_brain.cpython-312.pyc
+    ├── co_brain.cpython-313.pyc
+    ├── internet_check.cpython-311.pyc
+    ├── internet_check.cpython-312.pyc
+    ├── internet_check.cpython-313.pyc
+    └── test.cpython-312.pyc
+├── chrome-data
+    ├── Default
+    │   └── Preferences
+    ├── First Run
+    └── Local State
+├── co_brain.py
+├── input.txt
+├── internet_check.py
+├── logo.jpeg
+├── requirements.txt
+├── schedule.txt
+└── setup.py
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/optimus-prime-assistant&type=Date)](https://star-history.com/#yourusername/optimus-prime-assistant&Date)
+
 
 ---
 
 **"Freedom is the right of all sentient beings."** - Optimus Prime
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Somendra Kumar Yadav
+
