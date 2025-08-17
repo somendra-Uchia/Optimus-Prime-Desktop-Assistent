@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformers Themed Voice Assistant UI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(black, #1a1a1a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        canvas {
+            display: block;
+        }
+        #container {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <script>
+        let scene, camera, renderer, particles, material, isListening = false;
+        let audioContext, analyser, dataArray;
+        const particleCount = 2500; // Increased number of particles
+        let particlePositions; // Store original positions
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 175;
+
+            renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById("container").appendChild(renderer.domElement);
+
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            particlePositions = []; // Store original positions
+            const radius = 100;
+
+            for (let i = 0; i < particleCount; i++) {
+                let theta = Math.random() * Math.PI * 2;
+                let phi = Math.acos((Math.random() * 2) - 1);
+                let x = radius * Math.sin(phi) * Math.cos(theta);
+                let y = radius * Math.sin(phi) * Math.sin(theta);
+                let z = radius * Math.cos(phi);
+                vertices.push(x, y, z);
+                particlePositions.push({ x, y, z }); // Store original position
+            }
+
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            material = new THREE.PointsMaterial({ 
+                color: 0xFFD700, 
+                size: 2,
+                transparent: true,
+                opacity: 0.8
+            });
+            particles = new THREE.Points(geometry, material);
+
+            scene.add(particles);
+            animate();
+
+            window.addEventListener('resize', onWindowResize);
+            renderer.domElement.addEventListener('click', toggleListeningState);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Base rotation
+            particles.rotation.y += 0.002;
+            particles.rotation.x += 0.001;
+
+            if (isListening && analyser) {
+                analyser.getByteFrequencyData(dataArray);
+                
+                // Split frequency data into bands
+                const bassFreq = getAverageFrequency(dataArray, 0, 10);
+                const midFreq = getAverageFrequency(dataArray, 10, 100);
+                const highFreq = getAverageFrequency(dataArray, 100, 200);
+
+                // Update particle positions based on frequency bands
+                const positions = particles.geometry.attributes.position.array;
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const i3 = i * 3;
+                    const originalPos = particlePositions[i];
+                    
+                    // Calculate displacement based on frequency
+                    const displacement = (bassFreq + midFreq + highFreq) / 750;
+                    const noise = (Math.random() - 0.5) * displacement;
+                    
+                    positions[i3] = originalPos.x * (1 + noise);
+                    positions[i3 + 1] = originalPos.y * (1 + noise);
+                    positions[i3 + 2] = originalPos.z * (1 + noise);
+                }
+                
+                particles.geometry.attributes.position.needsUpdate = true;
+
+                // Scale based on overall volume
+                const avgFreq = (bassFreq + midFreq + highFreq) / 3;
+                const scale = 1 + (avgFreq / 256) * 0.3;
+                particles.scale.set(scale, scale, scale);
+                
+                // Color transition based on frequency
+                const hue = (bassFreq / 256) * 0.3;
+                material.color.setHSL(hue, 1, 0.5);
+            } else {
+                // Reset to original positions when not listening
+                const positions = particles.geometry.attributes.position.array;
+                for (let i = 0; i < particleCount; i++) {
+                    const i3 = i * 3;
+                    positions[i3] = particlePositions[i].x;
+                    positions[i3 + 1] = particlePositions[i].y;
+                    positions[i3 + 2] = particlePositions[i].z;
+                }
+                particles.geometry.attributes.position.needsUpdate = true;
+                particles.scale.set(1, 1, 1);
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        function getAverageFrequency(dataArray, start, end) {
+            const slice = dataArray.slice(start, end);
+            return slice.reduce((a, b) => a + b, 0) / slice.length;
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function toggleListeningState() {
+            isListening = !isListening;
+            material.color.set(isListening ? 0x1E90FF : 0xFFD700);
+
+            if (isListening) {
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                        let source = audioContext.createMediaStreamSource(stream);
+                        analyser = audioContext.createAnalyser();
+                        analyser.fftSize = 256;
+                        dataArray = new Uint8Array(analyser.frequencyBinCount);
+                        source.connect(analyser);
+                    });
+                }
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>
